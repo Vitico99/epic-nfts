@@ -12,7 +12,10 @@ const main = async () => {
     
     await txn.wait()
 
+    let c = await nftContract.getMintedNFTs()
+    let m = await nftContract.getMaxNFTs()
 
+    console.log(c.toNumber(), " NFTs have been minted out of ", m.toNumber());
 };
 
 const runMain = async () => {
